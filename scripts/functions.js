@@ -10,7 +10,7 @@ function startDataSlideshow() {
 };
 
 function insertCountdown() {
-  var timespan = countdown(null, new Date('Thu Aug 4 2022 08:00:00 GMT-0700 (PDT)'));
+  var timespan = countdown(null, new Date('Thu Aug 17 2023 07:00:00 GMT-0700 (PDT)'));
 
   document.getElementById('stand-by-title').innerText =
       ('0' + timespan.hours).slice(-2) + ':' +
@@ -23,7 +23,7 @@ function insertCountdown() {
 function getDonationAmount() {
   var request = new XMLHttpRequest();
 
-  request.open('GET', 'https://tiltify.com/api/v3/campaigns/454306');
+  request.open('GET', 'https://tiltify.com/api/v3/campaigns/505749');
   request.setRequestHeader('Authorization', 'Bearer 31c598ad64adc91b52950ca8cbdb5354f623d99fd1c54f7440f668ce1f6bccc9')
 
   request.onreadystatechange = function () {
@@ -49,7 +49,7 @@ function getDonationAmount() {
 function getLatestDonation() {
   var request = new XMLHttpRequest();
 
-  request.open('GET', 'https://tiltify.com/api/v3/campaigns/454306/donations');
+  request.open('GET', 'https://tiltify.com/api/v3/campaigns/505749/donations');
   request.setRequestHeader('Authorization', 'Bearer 31c598ad64adc91b52950ca8cbdb5354f623d99fd1c54f7440f668ce1f6bccc9')
 
   request.onreadystatechange = function () {
