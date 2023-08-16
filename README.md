@@ -1,4 +1,4 @@
-# MHQthon 2022 Layouts
+# MHQthon 2023 Layouts
 
 ## Getting Started
 To get started, clone or download & unzip this repo onto your computer in a place that OBS Studio or your broadcasting software of choice can access local HTML files.
@@ -31,7 +31,7 @@ To get started, clone or download & unzip this repo onto your computer in a plac
 * FPS `30`
 * Custom CSS
 ```css
-#game-title::after { content: 'MHQthon 2022'; }
+#game-title::after { content: 'MHQthon 2023'; }
 #next-game::after { content: '<Next Game in Schedule>'; }
   ```
 
@@ -73,7 +73,7 @@ For each game your location is streaming, do the following steps:
 * FPS `30`
 * Custom CSS
 ```css
-#game-title::after { content: 'MHQthon 2022'; }
+#game-title::after { content: 'MHQthon 2023'; }
 #next-game::after { content: '<Next Game in Schedule>'; }
 #stand-by-title::after { content: 'Returning Shortly'; }
   ```
@@ -94,7 +94,7 @@ For each game your location is streaming, do the following steps:
 * FPS `30`
 * Custom CSS
 ```css
-#game-title::after { content: 'MHQthon 2022';}
+#game-title::after { content: 'MHQthon 2023';}
 #next-game::after { content: '<First Game of the Broadcast>';}
   ```
 
@@ -114,7 +114,7 @@ For each game your location is streaming, do the following steps:
 * FPS `30`
 * Custom CSS
 ```css
-#game-title::after { content: 'MHQthon 2022'; }
+#game-title::after { content: 'MHQthon 2023'; }
 #stand-by-title::after { content: 'See You Next Year!'; }
   ```
 
