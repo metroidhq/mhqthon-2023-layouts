@@ -1,0 +1,113 @@
+/* OVERLAY CONFIG */
+/* WARNING: Do not change this unless you know what you're doing */
+
+/* Variables */
+:root {
+  --game-one-x: 0px;
+  --game-one-y: 0px;
+  --game-one-width: 948px;
+  --game-one-height: 711px;
+
+  --game-two-x: 972px;
+  --game-two-y: 0px;
+  --game-two-width: 948px;
+  --game-two-height: 711px;
+
+  --game-three-x: 0px;
+  --game-three-y: 735px;
+  --game-three-width: 332px;
+  --game-three-height: 249px;
+
+  --game-four-x: 1399px;
+  --game-four-y: 735px;
+  --game-four-width: 332px;
+  --game-four-height: 249px;
+
+  --host-one-x: 738px;
+  --host-one-y: 735px;
+  --host-one-width: 443px;
+  --host-one-height: 249px;
+
+  --social-width: 358px;
+  --social-height: 249px;
+}
+
+/* Layout Path */
+#container #background {
+  clip-path: polygon(
+    var(--game-one-width) var(--game-one-y),
+    var(--game-one-width) var(--game-one-height),
+    var(--game-one-x) var(--game-one-height),
+    var(--game-one-x) var(--game-three-y),
+    var(--overlay-width) var(--game-three-y),
+    var(--overlay-width) calc(var(--game-three-y) + var(--game-four-height)),
+    calc(var(--overlay-width) - var(--game-four-width)) calc(var(--game-three-y) + var(--game-four-height)),
+    calc(var(--overlay-width) - var(--game-four-width)) var(--game-three-y),
+    calc(var(--host-one-x) + var(--host-one-width)) var(--game-three-y),
+    calc(var(--host-one-x) + var(--host-one-width)) calc(var(--game-three-y) + var(--host-one-height)),
+    var(--host-one-x) calc(var(--game-three-y) + var(--host-one-height)),
+    var(--host-one-x) var(--game-three-y),
+    calc(var(--game-three-x) + var(--game-three-width)) var(--game-three-y),
+    calc(var(--game-three-x) + var(--game-three-width)) calc(var(--game-three-y) + var(--game-three-height)),
+    var(--game-three-x) calc(var(--game-three-y) + var(--game-three-height)),
+    var(--game-three-x) var(--overlay-height),
+    var(--overlay-width) var(--overlay-height),
+    var(--overlay-width) var(--game-two-height),
+    var(--game-two-x) var(--game-two-height),
+    var(--game-two-x) var(--game-two-y)
+  );
+}
+
+/* Host Name Positions & Dimensions */
+#container #host-one {
+  bottom: var(--bottom-bar-height);
+  left: var(--host-one-x);
+  width: var(--host-one-width);
+  height: calc(var(--host-one-height) / 5);
+  font-size: calc(var(--host-one-height) / 10);
+}
+
+/* Info Boxes Position & Dimensions */
+#container #info-boxes {
+  flex-direction: column;
+  left: calc(var(--game-three-x) + var(--game-three-width) + var(--element-margin));
+  bottom: var(--bottom-bar-height);
+  width: var(--social-width);
+  height: var(--social-height);
+  overflow-y: visible;
+}
+
+#container #info-boxes .info-box {
+  height: auto;
+}
+
+#container #info-boxes.spread .info-box {
+  margin: calc(var(--element-margin) / 2) 0;
+}
+
+#container #info-boxes.spread .info-box:first-of-type {
+  margin-top: 0px;
+}
+
+#container #info-boxes.spread .info-box:last-of-type {
+  margin-bottom: 0px;
+}
+
+/* Alerts & Chat Position & Dimensions */
+#container #chat,
+#container #alerts {
+  top: var(--host-one-y);
+  left: calc(var(--host-one-x) + var(--host-one-width) + var(--element-margin));
+  width: var(--social-width);
+}
+
+#container #chat,
+#container #alerts {
+  height: var(--social-height);
+}
+
+#container #social-background {
+  display: flex;
+  top: calc(var(--host-one-y) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--host-one-x) + var(--host-one-width) + var(--social-width) + calc(var(--element-margin) * 2)) + calc(var(--social-width) / 2));
+}

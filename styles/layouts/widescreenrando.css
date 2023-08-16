@@ -1,0 +1,79 @@
+/* OVERLAY CONFIG */
+/* WARNING: Do not change this unless you know what you're doing */
+
+/* Variables */
+:root {
+  --game-one-x: 0px;
+  --game-one-y: 0px;
+  --game-one-width: 1576px;
+  --game-one-height: 887px;
+
+  --host-one-x: 1600px;
+  --host-one-y: 744px;
+  --host-one-width: 320px;
+  --host-one-height: 240px;
+
+  --aux-one-x: 1576px;
+  --aux-one-y: 0px;
+  --aux-one-width: 344px;
+  --aux-one-height: 344px;
+
+  --social-width: 320px;
+  --social-height: 352px;
+}
+
+/* Layout Path */
+#container #background {
+  clip-path: polygon(
+    var(--game-one-width) var(--game-one-y),
+    var(--game-one-width) var(--game-one-height),
+    var(--game-one-x) var(--game-one-height),
+    var(--game-one-x) var(--overlay-height),
+    var(--overlay-width) var(--overlay-height),
+    var(--overlay-width) calc(var(--overlay-height) - var(--bottom-bar-height)),
+    var(--host-one-x) calc(var(--overlay-height) - var(--bottom-bar-height)),
+    var(--host-one-x) var(--host-one-y),
+    var(--overlay-width) var(--host-one-y),
+    var(--overlay-width) var(--game-one-y)
+  );
+}
+
+/* Host Name Positions & Dimensions */
+#container #host-one {
+  bottom: var(--bottom-bar-height);
+  left: var(--host-one-x);
+  width: var(--host-one-width);
+  height: calc(var(--host-one-height) / 5);
+  font-size: calc(var(--host-one-height) / 10);
+}
+
+/* Aux Positions & Dimensions */
+#container #aux-one {
+  top: var(--aux-one-y);
+  left: var(--aux-one-x);
+  width: var(--aux-one-width);
+  height: var(--aux-one-height);
+}
+
+/* Info Boxes Position & Dimensions */
+#container #info-boxes {
+  bottom: var(--bottom-bar-height);
+  width: var(--game-one-width);
+  height: var(--info-box-height);
+  overflow-y: visible;
+}
+
+/* Alerts & Chat Position & Dimensions */
+#container #chat,
+#container #alerts {
+  top: calc(var(--aux-one-y) + var(--aux-one-height) + var(--element-margin));
+  left: calc(var(--game-one-width) + var(--element-margin));
+  width: var(--social-width);
+  height: var(--social-height);
+}
+
+#container #social-background {
+  display: flex;
+  top: calc(var(--game-one-y) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--game-one-width) + var(--element-margin)) + calc(var(--social-width) / 2));
+}

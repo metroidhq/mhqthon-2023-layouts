@@ -1,0 +1,162 @@
+/* OVERLAY CONFIG */
+/* WARNING: Do not change this unless you know what you're doing */
+
+/* Variables */
+:root {
+  --game-one-x: 0px;
+  --game-one-y: 0px;
+  --game-one-width: 640px;
+  --game-one-height: 480px;
+
+  --game-two-x: 0px;
+  --game-two-y: 504px;
+  --game-two-width: 640px;
+  --game-two-height: 480px;
+
+  --game-three-x: 1280px;
+  --game-three-y: 0px;
+  --game-three-width: 640px;
+  --game-three-height: 480px;
+
+  --host-one-x: 664px;
+  --host-one-y: 320px;
+  --host-one-width: 284px;
+  --host-one-height: 160px;
+
+  --host-two-x: 664px;
+  --host-two-y: 504px;
+  --host-two-width: 284px;
+  --host-two-height: 160px;
+
+  --host-three-x: 972px;
+  --host-three-y: 320px;
+  --host-three-width: 284px;
+  --host-three-height: 160px;
+
+  --aux-one-x: 640px;
+  --aux-one-y: 0px;
+  --aux-one-width: 308px;
+  --aux-one-height: 296px;
+
+  --aux-two-x: 640px;
+  --aux-two-y: 688px;
+  --aux-two-width: 308px;
+  --aux-two-height: 296px;
+
+  --aux-three-x: 972px;
+  --aux-three-y: 0px;
+  --aux-three-width: 308px;
+  --aux-three-height: 296px;
+
+  --social-width: 948px;
+  --social-height: 480px;
+}
+
+/* Layout Path */
+#container #background {
+  clip-path: polygon(
+    var(--game-one-width) var(--game-one-y),
+    var(--game-one-width) var(--game-one-height),
+    var(--host-one-x) var(--game-one-height),
+    var(--host-one-x) var(--host-one-y),
+    calc(var(--host-one-x) + var(--host-one-width)) var(--host-one-y),
+    calc(var(--host-one-x) + var(--host-one-width)) var(--game-one-height),
+    var(--game-one-x) var(--game-one-height),
+    var(--game-one-x) var(--game-two-y),
+    var(--game-two-width) var(--game-two-y),
+    calc(var(--host-two-x) + var(--host-two-width)) var(--game-two-y),
+    calc(var(--host-two-x) + var(--host-two-width)) calc(var(--game-two-y) + var(--host-two-height)),
+    var(--host-two-x) calc(var(--game-two-y) + var(--host-two-height)),
+    var(--host-two-x) var(--game-two-y),
+    var(--game-two-width) var(--game-two-y),
+    var(--game-two-width) calc(var(--game-two-y) + var(--game-two-height)),
+    var(--game-two-x) calc(var(--game-two-y) + var(--game-two-height)),
+    var(--game-two-x) var(--overlay-height),
+    var(--overlay-width) var(--overlay-height),
+    var(--overlay-width) var(--game-three-height),
+    var(--host-three-x) var(--game-three-height),
+    var(--host-three-x) var(--host-three-y),
+    calc(var(--host-three-x) + var(--host-three-width)) var(--host-three-y),
+    calc(var(--host-three-x) + var(--host-three-width)) var(--game-three-height),
+    var(--game-three-x) var(--game-three-height),
+    var(--game-three-x) var(--game-three-y)
+  );
+}
+
+/* Info Boxes Position & Dimensions */
+#container #info-boxes {
+  left: var(--host-three-x);
+  bottom: var(--bottom-bar-height);
+  width: var(--social-width);
+  height: var(--info-box-height);
+  overflow-y: visible;
+}
+
+/* Alerts & Chat Position & Dimensions */
+#container #chat,
+#container #alerts {
+  top: var(--host-two-y);
+  left: var(--host-three-x);
+  width: var(--social-width);
+}
+
+#container #chat {
+  height: calc(var(--social-height) - calc(var(--info-box-height) + var(--divider-height)));
+}
+
+#container #alerts {
+  height: var(--social-height);
+}
+
+#container #social-background {
+  display: flex;
+  top: calc(var(--game-one-height) + var(--element-margin) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--game-one-width) + calc(var(--element-margin) * 2) + var(--host-one-width)) + calc(var(--social-width) / 2));
+}
+
+/* Host Name Positions & Dimensions */
+#container #host-one {
+  top: calc(calc(var(--host-one-y) + var(--host-one-height)) - calc(var(--host-one-height) / 5));
+  left: var(--host-one-x);
+  width: var(--host-one-width);
+  height: calc(var(--host-one-height) / 5);
+  font-size: calc(var(--host-one-height) / 10);
+}
+
+#container #host-two {
+  top: calc(calc(var(--host-two-y) + var(--host-two-height)) - calc(var(--host-two-height) / 5));
+  left: var(--host-two-x);
+  width: var(--host-two-width);
+  height: calc(var(--host-two-height) / 5);
+  font-size: calc(var(--host-two-height) / 10);
+}
+
+#container #host-three {
+  top: calc(calc(var(--host-three-y) + var(--host-three-height)) - calc(var(--host-three-height) / 5));
+  left: var(--host-three-x);
+  width: var(--host-three-width);
+  height: calc(var(--host-three-height) / 5);
+  font-size: calc(var(--host-three-height) / 10);
+}
+
+/* Aux Positions & Dimensions */
+#container #aux-one {
+  top: var(--aux-one-y);
+  left: var(--aux-one-x);
+  width: var(--aux-one-width);
+  height: var(--aux-one-height);
+}
+
+#container #aux-two {
+  top: var(--aux-two-y);
+  left: var(--aux-two-x);
+  width: var(--aux-two-width);
+  height: var(--aux-two-height);
+}
+
+#container #aux-three {
+  top: var(--aux-three-y);
+  left: var(--aux-three-x);
+  width: var(--aux-three-width);
+  height: var(--aux-three-height);
+}
