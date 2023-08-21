@@ -122,7 +122,7 @@ For each game your location is streaming, do the following steps:
 
 ## Notes
 
-* Valid Layout Names are `host`, `nes`, `nesrace2p`, `snes`, `snesrace2p`, `snesrando`, `fullscreen`, `fullscreenrace2p`, `fullscreenrando`, `fullscreenrandorace2p`, `fullscreenrandorace3p`, `fullscreenrandorace4p`, `widescreen`, `widescreenrace2p`, `widescreenrando`, `gb`, `gbrace2p`, `gba`, `gbarace2p`, `gbarando`, `gbarandorace2p`, `gbarandorace3p`, `ds`, `dsrace2p`, `dstall`, `dstallrace2p`, `3ds`, & `3dsrace2p`.
+* Valid Layout Names are `host`, `nes`, `nesrace2p`, `snes`, `snesrace2p`, `snesrando`, `fullscreen`, `fullscreenrace2p`, `fullscreenrando`, `fullscreenrandorace2p`, `fullscreenrandorace3p`, `fullscreenrandorace4p`, `widescreen`, `widescreenrace2p`, `widescreenrando`, `gb`, `gbrace2p`, `gba`, `gbarace2p`, `gbarando`, `gbarandorace2p`, `gbarandorace3p`, `gbarandorace4p`, `ds`, `dsrace2p`, `dstall`, `dstallrace2p`, `3ds`, & `3dsrace2p`.
   * If you provide an invalid Layout Name, it should be immediately evident in the rendering of the layout.
 * If you are the last game on the schedule, set the `#next-game` line of CSS to `Nothing` or the met incentive game goal.
 * For some of the older consoles like NES or SNES, you may have to skew the game capture, as the fullscreen output of the game is not the native resolution of the console.
